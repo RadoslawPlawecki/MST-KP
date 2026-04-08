@@ -31,7 +31,7 @@ def generate_graph(n, m):
     return edges
 
 
-def draw_graph_with_mst(n, edges, mst):
+def draw_graph_with_mst(n, edges, mst, savefig=None):
     use_latex()
     G = nx.Graph()
     G.add_weighted_edges_from(edges)
@@ -57,4 +57,6 @@ def draw_graph_with_mst(n, edges, mst):
     )
     ax2.set_title("Minimalne drzewo spinające")
     plt.tight_layout()
+    if savefig:
+        plt.savefig(f"plots/{savefig}", format='pdf')
     plt.show()
