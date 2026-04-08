@@ -24,11 +24,10 @@ def prim(n, edges):
     for u, v, w in edges:
         graph[u].append((v, w))
         graph[v].append((u, w))
-
     visited = [False] * n
     mst = []
     total_weight = 0
-    heap = [(0, 0, -1)]  
+    heap = [(0, 0, -1)] 
     while heap and len(mst) < n - 1:
         w, u, parent = heapq.heappop(heap)
         if visited[u]:
